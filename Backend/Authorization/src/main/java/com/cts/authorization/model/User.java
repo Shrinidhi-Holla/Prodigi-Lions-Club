@@ -16,7 +16,7 @@ import lombok.Setter;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "userrecord")
+@Table(name = "userrecord") //change name for new db
 public class User {
 
 	@Id
