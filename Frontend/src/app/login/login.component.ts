@@ -2,8 +2,9 @@ import { Component, ElementRef, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import {MatFormFieldModule} from '@angular/material/form-field'; 
-import { users } from '../user';
 import { HomepageComponent  } from '../homepage/homepage.component';
+import { LoginService } from '../services/login.service';
+import { AuthResponse } from 'src/model/AuthResponse';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -15,6 +16,7 @@ export class LoginComponent implements OnInit {
  
   constructor(
     private router:Router,private el:ElementRef,
+    private loginService:LoginService,
     
   ) {
     this.loginForm = new FormGroup({
@@ -29,32 +31,59 @@ export class LoginComponent implements OnInit {
   });
    }
 
-  //  email!: String;
-  //  password!: String;
-  //   users={
-  //    email:'',
-  //    password:''
-  //  }
-
+   msg:string='';
   credentials={
-    email:'',
+    username:'',
     password:''
   }
 
   ngOnInit(): void {
+
   }
-  onSubmit(email:any,password:any){
-    if(!this.loginForm.valid){
-      return;
+
+  onSubmit()
+  {
+    console.log("hellooo");
+    
+    if((this.credentials.username!='' && this.credentials.password!='')
+    &&(this.credentials.username!=null && this.credentials.password!=null))
+    {
+      console.log("Have to Submit Form the server");
+      //token generated
+      this.loginService.generateToken(this.credentials).subscribe(
+        (response:AuthResponse)=>{
+          console.log(response);
+          this.loginService.loginUser(response["jwttoken"]);
+          console.log(this.loginService.getToken());
+          //this.router.navigate(['dashboard', (this.credentials.username])
+          // this.router.navigate(['dashboard'])
+          window.location.href="/homepage";
+
+        },
+        (error:any)=>{
+          console.log(error);
+          this.msg="Invalid Credentials"
+        }
+      )
     }
-    console.log(email.value);
+    else{
+      console.log("Files are empty !!");
+      this.msg="User name or Password missing"
+    }
+  }
+
+  // onSubmit(email:any,password:any){
+  //   if(!this.loginForm.valid){
+  //     return;
+  //   }
+  //   console.log(email.value);
     
-    this.credentials.email==email.value;
-    this.credentials.password==password.value;
+  //   this.credentials.email==email.value;
+  //   this.credentials.password==password.value;
     
-    console.log(this.credentials.email);
+  //   console.log(this.credentials.email);
     
 
-    this.router.navigate(['homepage'])
-  }
+  //   this.router.navigate(['homepage'])
+  // }
 }

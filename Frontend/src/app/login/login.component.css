@@ -58,7 +58,7 @@ opacity: 0.8;
     gap: 20px;
     margin-right: 250px;
 }
-.email,.password{
+.username,.password{
     font-size: 25px;
     color: #0d33f183;
 }

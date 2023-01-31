@@ -7,9 +7,9 @@ import { LoginComponent } from './login/login.component';
 import { ManavSinghComponent } from './manav-singh/manav-singh.component';
 
 const routes: Routes = [
-  { path: "", component: LoginComponent},
-  { path: "login", component:LoginComponent },
-  { path: "homepage", component:HomepageComponent , children:[
+  { path: "", component: LoginComponent,pathMatch:"full"},
+  { path: "login", component:LoginComponent,pathMatch:"full" },
+  { path: "homepage", component:HomepageComponent ,children:[
     {
       path: "manavsingh", component:ManavSinghComponent
     },

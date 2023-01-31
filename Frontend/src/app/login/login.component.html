@@ -6,26 +6,26 @@
         <div class="login-image">
             <img src="../assets/login-image.jpg" alt="" class="doc-image">
         </div>
-        <div class="login-form" [formGroup]="loginForm" > 
-            <div class="email">
-                Email
+        <form (ngSubmit)="onSubmit()" class="login-form" > 
+            <div class="username">
+                username
             </div>
-            <input type="text" name="Email" class="emailinput" formControlName="email" placeholder="Enter Email Id" #email>
-            <div class="mailInputErrors" *ngIf="!loginForm.get('email')?.errors?.required && (loginForm.get('email')?.errors?.pattern)">
-                Please enter a valid email address
+            <input type="text" name="username" class="usernameinput" placeholder="Enter username" #username [(ngModel)]="credentials.username">
+            <!-- <div class="mailInputErrors" *ngIf="!loginForm.get('username')?.errors?.required && (loginForm.get('username')?.errors?.pattern)">
+                Please enter a valid username address
             </div>
-              <div class="mailInputErrors" *ngIf="loginForm.get('email')?.invalid && (loginForm.get('email')?.dirty || loginForm.get('email')?.touched) && loginForm.get('email')?.errors?.required">
-                Email is required
-              </div>
+              <div class="mailInputErrors" *ngIf="loginForm.get('username')?.invalid && (loginForm.get('username')?.dirty || loginForm.get('username')?.touched) && loginForm.get('username')?.errors?.required">
+                username is required
+              </div> -->
               <div class="password">
                 Password
               </div>
-            <input type="password" name="password" class="passwordinput" formControlName="password" placeholder="Enter Password" #password>
-              <div class="passwordInputErrors" *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched) && loginForm.get('password')?.errors">
+            <input type="password" name="password" class="passwordinput" placeholder="Enter Password" #password [(ngModel)]="credentials.password">
+              <!-- <div class="passwordInputErrors" *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched) && loginForm.get('password')?.errors">
                 Password is required
-              </div>
-              <button [disabled]="!loginForm.valid" class="loginbtn" (click)="onSubmit(email,password)">Log In</button>
-        </div>
+              </div> -->
+              <input class="loginbtn" type="submit">
+        </form>
           
     </div>
 </div>

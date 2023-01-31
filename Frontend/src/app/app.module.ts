@@ -12,6 +12,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomepageComponent } from './homepage/homepage.component';
 import { ManavSinghComponent } from './manav-singh/manav-singh.component';
 import { AbhishekBhattacharyaComponent } from './abhishek-bhattacharya/abhishek-bhattacharya.component';
+import { HttpClientModule } from '@angular/common/http';
 // import { AbhishekBhattacharyaComponent } from './abhishek-bhattacharya/abhishek-bhattacharya.component';
 
 
@@ -34,7 +35,8 @@ import { AbhishekBhattacharyaComponent } from './abhishek-bhattacharya/abhishek-
     MatButtonModule,
     MatInputModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
