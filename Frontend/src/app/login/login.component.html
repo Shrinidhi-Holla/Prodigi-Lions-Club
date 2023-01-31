@@ -1,0 +1,31 @@
+<div class="login-container">
+    <div class="login-card">
+        <div class="login-header">
+            <h2>LOGIN</h2>
+        </div>
+        <div class="login-image">
+            <img src="../assets/login-image.jpg" alt="" class="doc-image">
+        </div>
+        <div class="login-form" [formGroup]="loginForm" > 
+            <div class="email">
+                Email
+            </div>
+            <input type="text" name="Email" class="emailinput" formControlName="email" placeholder="Enter Email Id" #email>
+            <div class="mailInputErrors" *ngIf="!loginForm.get('email')?.errors?.required && (loginForm.get('email')?.errors?.pattern)">
+                Please enter a valid email address
+            </div>
+              <div class="mailInputErrors" *ngIf="loginForm.get('email')?.invalid && (loginForm.get('email')?.dirty || loginForm.get('email')?.touched) && loginForm.get('email')?.errors?.required">
+                Email is required
+              </div>
+              <div class="password">
+                Password
+              </div>
+            <input type="password" name="password" class="passwordinput" formControlName="password" placeholder="Enter Password" #password>
+              <div class="passwordInputErrors" *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched) && loginForm.get('password')?.errors">
+                Password is required
+              </div>
+              <button [disabled]="!loginForm.valid" class="loginbtn" (click)="onSubmit(email,password)">Log In</button>
+        </div>
+          
+    </div>
+</div>

@@ -1,0 +1,46 @@
+.homepage-container{
+    position: relative;
+    top: 100px;
+    display: flex;
+}
+.homepage-header{
+    width: 25%;
+}
+.homepage-header,h1{
+    padding-left: 25px;
+    font-weight: 700;
+    font-size: 1.5em;
+}
+.sidebar{
+    position: fixed;
+    top: 22%;
+    left: 0px;
+    width: 15%;
+    color: #0d33f183;
+    background-color: rgba(128, 128, 128, 0.234);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    height: 100vh;
+    max-width: 20%;
+    border-radius: 5px;
+}
+a{
+    color: #000;
+    border-radius: 2px;
+    text-decoration: none;
+}
+a:nth-child(odd){
+background-color: white;
+}
+.router-link-active{
+text-decoration: underline;
+}
+.patient{
+    cursor: pointer;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    font-size: 15px;
+    font-weight: 500;
+}

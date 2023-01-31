@@ -1,0 +1,70 @@
+.header-container{
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    height: 75px;
+    background-color: #0D32F1;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content:space-between;
+    z-index: 10;
+}
+
+.header-Logo{
+    padding-left: 20px;
+    padding-right: 50px;
+    /* border-right: 1px solid rgba(255, 255, 255, 0.5); */
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 1.8em;
+    font-weight: 600;
+    color: whitesmoke;
+    letter-spacing: 2px;
+    font-family: 'Playfair Display', serif;
+}
+img{
+    height: 80%;
+}
+
+.header-links{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    padding-right: 25px;
+}
+
+button{
+    height: 50px;
+    width: 75px;
+    outline: none;
+    border: none;
+    background-color: #0D32F1;
+    color: whitesmoke;
+    font-size: 20px;
+    font-family: 'PT Sans Narrow';
+    width: 100%;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+Button:hover{
+    cursor: pointer;
+    background-color:#3555f780;
+    border-radius: 8px;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+.Login{
+    display: flex;
+    background-color: #0d6cf1;
+    border-radius: 8px;
+    align-items: center;
+    gap: 10px;
+}

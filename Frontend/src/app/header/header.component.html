@@ -1,0 +1,25 @@
+<div class="header-container">
+    <div class="header-Logo" routerLink="/">
+        <!-- <img src="../assets/Logo.svg" alt=""> -->
+        <label>Lions Club Hospital Management</label>
+    </div>
+    <div class="header-links">
+       <Button href="#" class="Home">Home</Button>
+       <Button (click)="gotoPatients()" class="Patients">
+        Patients
+       </Button>
+       <Button (click)="gotoDoctors()" class="Doctors">
+       Doctors
+       </Button>
+       <Button (click)="Login()" class="Login" *ngIf="!loggedin" >
+        <span class="material-symbols-outlined" style="color: black;">
+            account_circle
+            </span>Login
+       </Button>
+       <!-- <Button (click)="Logout()" class="Login" *ngIf="loggedin" >
+        <span class="material-symbols-outlined" style="color: black;">
+            account_circle
+            </span>
+       </Button> -->
+    </div>
+</div>

@@ -1,0 +1,103 @@
+.login-container{
+    position: relative;
+    top: 75px;
+    height: 87.5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #a6a8ad5f;
+}
+.login-card{
+    width: 90%;
+    height: 80vh;
+    background-color: #F64C71;
+    background: linear-gradient(to left,#F0EDF5 50%,#F64C71 50%);
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    align-items: flex-end;
+    border-radius: 10px;
+    /* gap: 100px; */
+}
+.login-header{
+    padding-top: 25px;
+    padding-bottom: 25px;
+    background: linear-gradient(to left,#F0EDF5 50%,#F64C71 50%);
+    /* color: linear-gradient(to left,#F0EDF5 50%,#F64C71 50%); */
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border-bottom: 2px solid rgba(108, 103, 103, 0.662); */
+    border-radius: inherit;
+}
+h2{
+    background: -webkit-linear-gradient(180deg, #F64C71 50%, #F0EDF5 50%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    z-index: 2;
+    font-size: 45px;
+}
+.login-image{
+    position: absolute;
+    width: fit-content;
+    left: 85px;
+    top: 35px;
+}
+.doc-image{
+width: 88vh;
+height: 75vh;
+object-fit: cover;
+border-radius: 8px;
+opacity: 0.8;
+}
+.login-form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-right: 250px;
+}
+.email,.password{
+    font-size: 25px;
+    color: #0d33f183;
+}
+input{
+    height: 30px;
+    width: 250px;
+    border: None;
+    background: transparent;
+    border-bottom: 1px solid #F64C71;
+    font-size: 20px;
+    color: #F64C71;
+    transition: padding .5s;
+}
+input:focus{
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #F64C71;
+    padding-bottom: 20px;
+}
+input::placeholder{
+    font-size: 15px;
+    color: rgba(91, 80, 80, 0.677);
+}
+input::after{
+    color: #F64C71;
+}
+.loginbtn{
+    height: 50px;
+    width: 100px;
+    background-color: #F64C71;
+    color: white;
+    font-size: 20px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.loginbtn:active{
+    translate: 0px -2px;
+}
+
+.mailInputErrors,.passwordInputErrors{
+    color: red;
+}

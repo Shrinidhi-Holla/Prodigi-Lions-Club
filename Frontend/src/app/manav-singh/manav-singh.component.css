@@ -1,0 +1,63 @@
+.patient-details-container{
+    position: relative;
+    top: 40px;
+    background-color: whitesmoke;
+    height: 75vh;
+    width: 1120px;
+    padding: 10px;
+    
+}
+.details{
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    padding-left: 10px;
+    padding-top: 25px;
+   flex-wrap: wrap;
+}
+
+h3{
+    font-weight: 500;
+}
+.Personal-Details,.Contacts,.Patient-History{
+    padding: 5px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+.Patient-History{
+    width: 100%;
+}
+.name,.address,.phone,.primary-contact,.secondary-contact{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-bottom: 10px;
+    max-width: 600px;
+
+}
+.name-text,.address-text,.phone-text,.primary-contact-name,.primary-contact-relation,.secondary-contact-name,.secondary-contact-relation{
+    font-size: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    color:#0d33f1;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    color: #0d33f1;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 20px;
+  }
+  tr:nth-child(odd) {
+    background-color: #dddddd51;
+  }
