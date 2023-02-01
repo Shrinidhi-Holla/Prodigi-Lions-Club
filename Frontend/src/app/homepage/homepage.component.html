@@ -1,6 +1,7 @@
 <div class="homepage-container">
     <div class="homepage-header">
          Patient Details 
+         <button class="updateDetails" (click)="updatedetails()">Update Details</button>
     </div>
         <div class="sidebar">
         <a routerLink="/homepage/manavsingh" class="patient" routerLinkActive="router-link-active">Manav Singh</a>
@@ -14,5 +15,8 @@
     <div class="patient-details">
         <router-outlet></router-outlet>
     </div>
+
+    <!-- <button class="updateDetails" (click)="updatedetails()">Update Details</button> -->
+
 </div>
 

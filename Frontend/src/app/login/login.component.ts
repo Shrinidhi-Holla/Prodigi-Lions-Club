@@ -5,6 +5,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { HomepageComponent  } from '../homepage/homepage.component';
 import { LoginService } from '../services/login.service';
 import { AuthResponse } from 'src/model/AuthResponse';
+import { HeaderComponent } from '../header/header.component';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -17,7 +18,7 @@ export class LoginComponent implements OnInit {
   constructor(
     private router:Router,private el:ElementRef,
     private loginService:LoginService,
-    
+    // private headercomp:HeaderComponent
   ) {
     this.loginForm = new FormGroup({
         email: new FormControl('', [Validators.required, Validators.email,Validators.pattern(
@@ -32,9 +33,9 @@ export class LoginComponent implements OnInit {
    }
 
    msg:string='';
-  credentials={
-    username:'',
-    password:''
+   credentials={
+   username:'',
+   password:''
   }
 
   ngOnInit(): void {
@@ -55,10 +56,8 @@ export class LoginComponent implements OnInit {
           console.log(response);
           this.loginService.loginUser(response["jwttoken"]);
           console.log(this.loginService.getToken());
-          //this.router.navigate(['dashboard', (this.credentials.username])
-          // this.router.navigate(['dashboard'])
           window.location.href="/homepage";
-
+          
         },
         (error:any)=>{
           console.log(error);
@@ -72,18 +71,4 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  // onSubmit(email:any,password:any){
-  //   if(!this.loginForm.valid){
-  //     return;
-  //   }
-  //   console.log(email.value);
-    
-  //   this.credentials.email==email.value;
-  //   this.credentials.password==password.value;
-    
-  //   console.log(this.credentials.email);
-    
-
-  //   this.router.navigate(['homepage'])
-  // }
 }

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { LoginService } from '../services/login.service';
+
 
 @Component({
   selector: 'app-header',
@@ -7,19 +10,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private loginService:LoginService,private router:Router) { }
 
   ngOnInit(): void {
+    console.log(this.loggedin);
+    
   }
-  public loggedin=false;
-  public loginvalue="Login"
+  public loggedin=this.loginService.isLoggedIn;
+  
+  public loginvalue="Login";
   Login(){
-    this.loggedin=true;
-    this.loginvalue="Logout";
+    this.loginService.isLoggedIn();
+    this.loginvalue=="Logout"
   }
 
   Logout(){
-    this.loggedin=false;
+    this.loginService.logout();
+    this.router.navigate(["/login"]);
   }
 
   gotoPatients(){

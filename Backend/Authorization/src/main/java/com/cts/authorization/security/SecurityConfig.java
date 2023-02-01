@@ -44,7 +44,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
     	httpSecurity.csrf().disable();
-//        httpSecurity.headers().frameOptions().disable();
+        httpSecurity.headers().frameOptions().disable();
         // We don't need CSRF for this example
         httpSecurity.csrf().disable().authorizeRequests().antMatchers("/**").permitAll().anyRequest()
                 .authenticated().and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);

@@ -1,25 +1,25 @@
 <div class="patient-details-container">
     <div class="details">
-        <div class="Personal-Details">
+        <div class="Personal-Details" *ngFor="let details of PatientDetails">
             <h3>Personal Details</h3>
             <div class="name">
             <span class="material-symbols-outlined">badge</span>
-            <Label class="name-text"> Manav Singh</Label>
+            <Label class="name-text">{{this.details.Name}}</Label>
         </div>
         <div class="address">
             <span class="material-symbols-outlined">location_on</span>
         
-        <label class="address-text">Treasure Collection Bldg, Ab Nair Road, Near Juhu Church & Post Office, Juhu, Mumbai, Maharashtra, 400049</label>
+        <label class="address-text">{{this.details.Address}}</label>
     </div>
         <div class="phone">
             <span class="material-symbols-outlined">
                 call
                 </span>
         
-        <label class="phone-text">9998856610</label>
+        <label class="phone-text">{{this.details.Phone}}</label>
     </div>
     </div>
-        <div class="Contacts">
+        <div class="Contacts" *ngFor="let details of PatientContactDetails">
             <h3>Contacts</h3>
             
             <div class="primary-contact">
@@ -27,10 +27,11 @@
                     call
                     </span>
             <div class="primary-contact-name">
-                <label>Randeep Singh </label>
+                <label #fathername>{{this.details.FatherName}}</label>
             </div>
             <div class="primary-contact-relation">
-                <label> Relation:  Father </label>
+                <!-- <label > Relation: {{this.details.FatherName==="FatherName" ? "Father":"Mother"}}</label> -->
+                <label>Relation: Father</label>
             </div>
             </div>
             <div class="secondary-contact">
@@ -38,17 +39,18 @@
                     phone_paused
                     </span>
             <div class="secondary-contact-name">
-                <label>Arshpreet Singh </label>
+                <label #MotherName>{{this.details.MotherName}} </label>
             </div>
             <div class="secondary-contact-relation">
-                <label> Relation:  Mother </label>
+                <!-- <label> Relation: {{this.details.MotherName==="Father" ?  "Father":"Mother"}}</label> -->
+                <label>Relation: Mother</label>
             </div>
             </div>
         </div>
 
         <div class="Patient-History">
             <h3>Patient History</h3>
-            <table>
+            <table *ngFor="let history of PatientHistory">
             <tr>
                 <th>Date</th>
                 <th>Visit No</th>
@@ -57,32 +59,24 @@
                 <th>Claim Status</th>
                 <th>Invoice No</th>
             </tr>
-            <tr>
+            <tr >
+                <td>{{history.Date}}</td>
+                <td>{{history.VisitNo}}</td>
+                <td>{{history.VisitStatus}}</td>
+                <td>{{history.ClaimNo}}</td>
+                <td>{{history.ClaimStatus}}</td>
+                <td>{{history.InvoiceNo}}</td>
+            </tr>
+            <!-- <tr>
                 <td>09/12/2022</td>
                 <td>23365</td>
                 <td>Complete</td>
                 <td>559698</td>
                 <td>Pending</td>
                 <td>7786546576</td>
-            </tr>
-            <tr>
-                <td>09/12/2022</td>
-                <td>23365</td>
-                <td>Complete</td>
-                <td>559698</td>
-                <td>Pending</td>
-                <td>7786546576</td>
-            </tr>
+            </tr> -->
         </table>
         </div>
 
     </div>
 </div>
-
-<!-- Phone number  02226250164
-            
-            Zip code  400049
-            
-            Country calling code  +91
-            
-            Country  India -->

@@ -2,9 +2,13 @@
     position: relative;
     top: 100px;
     display: flex;
+    /* justify-content: space-between; */
 }
 .homepage-header{
     width: 25%;
+    display: flex;
+   
+    
 }
 .homepage-header,h1{
     padding-left: 25px;
@@ -43,4 +47,26 @@ text-decoration: underline;
     padding-left: 5px;
     font-size: 15px;
     font-weight: 500;
+}
+.updateDetails{
+    position: absolute;
+    top: -15px;
+    right: 10px;
+    height: 50px;
+    width: 100px;
+    outline: none;
+    border: none;
+    background-color: #0D32F1;
+    color: whitesmoke;
+    font-size: 18px;
+    font-family: 'PT Sans Narrow';
+    padding-right: 10px;
+    padding-left: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.updateDetails:hover{
+    cursor: pointer;
+    background-color:#3555f780;
+    border-radius: 8px;
 }
